@@ -1,0 +1,76 @@
+1.#include<iostream>
+using namespace std;
+int add(int a,int b)
+{
+    return a+b;
+}
+int main()
+{
+    int x,y,sum;
+    cout<<"Please input x and y:\n"<<endl;
+    cin>>x>>y;
+    sum=add(x,y);
+    cout<<x<<"+"<<y<<"="<<sum<<endl;
+    return 0;
+}
+2. #include<iostream>
+using namespace std;
+int main()
+{
+    int r,l,s;
+    cin>>r;
+    cout<<"l="<<2*3.14*r<<endl;
+    cout<<"s="<<3.14*r*r<<endl;
+    return 0;
+}
+3. #include<iostream>
+using namespace std;
+int main()
+{
+int *p,i,a=0,b=0;
+p=new int[20];
+for(i=0;i<20;i++)
+{ cin>>p[i];
+if(p[i]>0)
+a++;
+if(p[i<0])
+b++;
+}
+cout<<"正数为"<<a<<endl;
+cout<<"负数为"<<b;
+delete[]p;
+return 0;
+
+}
+4. #include<iostream>
+using namespace std;
+float checkAgeScore(int age,float score)
+{
+    if(age<16||age>25)
+        throw age;
+    if(score<0||score>5)
+        throw score;
+    return score*20;
+}
+int main()
+{
+    string name;
+    int age;
+    float score,x;
+    cout<<"请输入你的名字、年龄、分数\n"<<endl;
+    cin>>name>>age>>score;
+    try
+    {
+        x=checkAgeScore(age,score);
+        cout<<"名字："<<name<<"年龄："<<age<<"分数："<<x<<"%"<<endl;
+    }
+    catch(int)
+    {
+        cout<<"年龄发生了异常\n"<<endl;
+    }
+    catch(float)
+    {
+        cout<<"分数发生了异常\n"<<endl;
+    }
+    return 0;
+}
